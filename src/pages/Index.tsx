@@ -4,6 +4,7 @@ import ParticleSystem from '../components/ParticleSystem';
 import CatIllustration from '../components/CatIllustration';
 import FuturisticNavigation from '../components/FuturisticNavigation';
 import DataPanel from '../components/DataPanel';
+import SunshineCursor from '../components/SunshineCursor';
 
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -24,13 +25,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-catbot-black relative overflow-x-hidden">
+      {/* Sunshine Cursor Effect */}
+      <SunshineCursor />
+      
       {/* Particle System Background */}
       <ParticleSystem />
       
       {/* Vignette Effect */}
       <div className="fixed inset-0 vignette pointer-events-none z-10" />
 
-      {/* Navigation */}
+      {/* Navigation - Now emanates from cat */}
       <FuturisticNavigation />
 
       {/* Hero Section */}
