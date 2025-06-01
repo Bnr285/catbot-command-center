@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import ParticleSystem from '../components/ParticleSystem';
 import CatIllustration from '../components/CatIllustration';
@@ -7,12 +6,17 @@ import SunshineCursor from '../components/SunshineCursor';
 
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const testimonials = [
     { quote: "Caught 37x on $PIZZA within 36 hrs.", handle: "@degenfinder" },
@@ -82,7 +86,7 @@ const Index = () => {
             </div>
 
             <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <button className="neon-button group relative overflow-hidden">
+              <button onClick={scrollToContact} className="neon-button group relative overflow-hidden">
                 <span className="relative z-10">LAUNCH BOT</span>
                 {/* Sparkle effect on hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -196,7 +200,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen relative py-20 flex items-center justify-center">
+      <section id="contact" ref={contactRef} className="min-h-screen relative py-20 flex items-center justify-center">
         <div className="container mx-auto px-4 max-w-lg">
           <div className="glass-panel-purple p-8 relative">
             {/* Animated border line */}
