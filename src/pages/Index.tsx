@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import ParticleSystem from '../components/ParticleSystem';
 import CatIllustration from '../components/CatIllustration';
@@ -28,8 +29,8 @@ const Index = () => {
     
     if (name && email) {
       toast({
-        title: "Success!",
-        description: `Thanks ${name}! You've been added to our waitlist. We'll contact you at ${email} soon.`,
+        title: "Mission Accepted! 🐾",
+        description: `Welcome to the pack, ${name}! We'll send alpha signals to ${email} when CatBot goes live.`,
         duration: 5000,
       });
       
@@ -50,38 +51,32 @@ const Index = () => {
     {
       title: "Neural Net Signal Engine",
       description: "Analyzes on-chain data with deep learning models to detect early memecoin anomalies.",
-      icon: "🧠",
-      delay: "0s"
+      icon: "🧠"
     },
     {
-      title: "Volume + Hype Detection",
+      title: "Volume + Hype Detection", 
       description: "Scans exchange volume and social chatter, prioritizing coins with sudden buzz.",
-      icon: "👁",
-      delay: "0.2s"
+      icon: "👁"
     },
     {
       title: "Sentiment Scanner",
       description: "Parses Telegram, Discord, and Twitter channels for sentiment indicators in real time.",
-      icon: "❤️",
-      delay: "0.4s"
+      icon: "❤️"
     },
     {
       title: "Rug Risk Classifier",
       description: "Uses heuristics & AI to estimate rugpull probability before you invest.",
-      icon: "🛡️",
-      delay: "0.6s"
+      icon: "🛡️"
     },
     {
       title: "Wallet Radar",
       description: "Traces large wallet movements, identifying whale activity on Solana tokens.",
-      icon: "🐾",
-      delay: "0.8s"
+      icon: "🐾"
     },
     {
       title: "Smart Contract Analyzer",
       description: "Automatically scans smart contracts for potential vulnerabilities and red flags.",
-      icon: "🔍",
-      delay: "1s"
+      icon: "🔍"
     }
   ];
 
@@ -192,7 +187,7 @@ const Index = () => {
                 key={feature.title}
                 className="glass-panel p-6 opacity-0 animate-fade-in hover:scale-105 hover:shadow-[0_0_30px_rgba(153,69,255,0.4)] transition-all duration-500 transform hover:rotate-1"
                 style={{ 
-                  animationDelay: feature.delay, 
+                  animationDelay: `${index * 0.2}s`, 
                   animationFillMode: 'forwards',
                   animationDuration: '0.8s'
                 }}
@@ -255,7 +250,7 @@ const Index = () => {
           <div className="text-center space-y-8">
             <div className="inline-block glass-panel px-4 py-2 border border-catbot-purple/40 mb-4">
               <span className="font-ibm-mono text-sm uppercase tracking-wider text-catbot-purple">
-                OUR CREDENTIALS
+                ORIGIN STORY
               </span>
             </div>
             
@@ -263,16 +258,62 @@ const Index = () => {
               ABOUT US
             </h2>
             
-            <div className="space-y-6 max-w-2xl mx-auto">
-              <p className="font-inter text-lg text-catbot-text-secondary leading-relaxed">
-                We're a network of traders, engineers, and crypto degens.
-              </p>
-              <p className="font-inter text-lg text-catbot-text-secondary leading-relaxed">
-                Our mission was to outsmart meme chaos using raw machine learning.
-              </p>
-              <p className="font-inter text-lg text-catbot-text-primary leading-relaxed">
-                What we built became CatBot.
-              </p>
+            {/* Animated Cat Paw */}
+            <div className="relative flex justify-center mb-8">
+              <div className="w-20 h-20 relative animate-bounce">
+                <svg 
+                  viewBox="0 0 100 100" 
+                  className="w-full h-full text-catbot-gold animate-pulse"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.4))'
+                  }}
+                >
+                  {/* Cat Paw */}
+                  <ellipse cx="50" cy="65" rx="20" ry="25" fill="currentColor" opacity="0.9"/>
+                  {/* Paw Pads */}
+                  <ellipse cx="50" cy="55" rx="8" ry="10" fill="#FF69B4"/>
+                  <ellipse cx="40" cy="45" rx="5" ry="6" fill="#FF69B4"/>
+                  <ellipse cx="60" cy="45" rx="5" ry="6" fill="#FF69B4"/>
+                  <ellipse cx="45" cy="40" rx="4" ry="5" fill="#FF69B4"/>
+                  <ellipse cx="55" cy="40" rx="4" ry="5" fill="#FF69B4"/>
+                  {/* Claws */}
+                  <path d="M 35 50 L 30 40" stroke="white" strokeWidth="2" opacity="0.8"/>
+                  <path d="M 65 50 L 70 40" stroke="white" strokeWidth="2" opacity="0.8"/>
+                  <path d="M 50 35 L 50 25" stroke="white" strokeWidth="2" opacity="0.8"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div className="space-y-6 max-w-3xl mx-auto">
+              <div className="glass-panel p-6 opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+                <p className="font-inter text-lg text-catbot-text-secondary leading-relaxed">
+                  It started in a Discord server at 3 AM. A group of sleep-deprived traders, watching another 100x gem slip through their fingers while they were analyzing charts manually.
+                </p>
+              </div>
+              
+              <div className="glass-panel p-6 opacity-0 animate-fade-in" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
+                <p className="font-inter text-lg text-catbot-text-secondary leading-relaxed">
+                  "What if we could teach a machine to smell the next BONK before it pumps?" said one frustrated degen. That question sparked a 6-month coding marathon fueled by energy drinks and pure spite.
+                </p>
+              </div>
+              
+              <div className="glass-panel p-6 opacity-0 animate-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
+                <p className="font-inter text-lg text-catbot-text-primary leading-relaxed font-semibold">
+                  We built neural networks that understand meme psychology. We trained algorithms on whale movements. We created the ultimate crypto predator.
+                </p>
+              </div>
+              
+              <div className="glass-panel p-6 opacity-0 animate-fade-in border-catbot-gold/30" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+                <p className="font-inter text-xl text-catbot-gold leading-relaxed font-bold">
+                  CatBot doesn't just find memecoins. It hunts them. 🐾
+                </p>
+              </div>
+              
+              <div className="opacity-0 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+                <p className="font-ibm-mono text-sm text-catbot-text-muted uppercase tracking-wider">
+                  — Built by degens, for degens —
+                </p>
+              </div>
             </div>
           </div>
         </div>
