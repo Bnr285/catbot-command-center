@@ -1,119 +1,7 @@
 
-import React, { useState } from 'react';
-
-interface HotspotProps {
-  id: string;
-  x: string;
-  y: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  onHover: (id: string | null) => void;
-}
-
-const Hotspot: React.FC<HotspotProps> = ({ id, x, y, title, description, icon, onHover }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  return (
-    <div
-      className="absolute group"
-      style={{ left: x, top: y, transform: 'translate(-50%, -50%)' }}
-      onMouseEnter={() => {
-        setShowTooltip(true);
-        onHover(id);
-      }}
-      onMouseLeave={() => {
-        setShowTooltip(false);
-        onHover(null);
-      }}
-    >
-      {/* Hotspot Ring */}
-      <div className="w-12 h-12 border-2 border-catbot-gold rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] animate-nav-pulse bg-black/50">
-        <div className="text-catbot-gold text-lg">
-          {icon}
-        </div>
-      </div>
-
-      {/* Ripple Effect */}
-      <div className="absolute inset-0 border-2 border-catbot-gold rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
-
-      {/* Tooltip */}
-      {showTooltip && (
-        <div 
-          className="absolute z-50 w-72 p-4 glass-panel-purple transform -rotate-2 transition-all duration-500 ease-out"
-          style={{ 
-            left: id === 'paw' || id === 'paw2' ? '-280px' : '50px', 
-            top: '-20px',
-            opacity: showTooltip ? 1 : 0,
-            transform: showTooltip ? 'scale(1) rotate(-2deg)' : 'scale(0.9) rotate(-2deg)'
-          }}
-        >
-          <h3 className="font-ibm-mono font-bold text-base text-catbot-text-primary mb-2">
-            {title}
-          </h3>
-          <p className="font-inter text-sm text-catbot-text-secondary leading-relaxed">
-            {description}
-          </p>
-        </div>
-      )}
-    </div>
-  );
-};
+import React from 'react';
 
 const CatIllustration: React.FC = () => {
-  const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
-
-  const hotspots = [
-    {
-      id: 'brain',
-      x: '50%',
-      y: '15%',
-      title: 'Neural Net Signal Engine',
-      description: 'Analyzes on-chain data with deep learning models to detect early memecoin anomalies.',
-      icon: '🧠'
-    },
-    {
-      id: 'eyes',
-      x: '50%',
-      y: '30%',
-      title: 'Volume + Hype Detection',
-      description: 'Scans exchange volume and social chatter, prioritizing coins with sudden buzz.',
-      icon: '👁'
-    },
-    {
-      id: 'chest',
-      x: '50%',
-      y: '50%',
-      title: 'Sentiment Scanner',
-      description: 'Parses Telegram, Discord, and Twitter channels for sentiment indicators in real time.',
-      icon: '❤️'
-    },
-    {
-      id: 'neck',
-      x: '50%',
-      y: '40%',
-      title: 'Rug Risk Classifier',
-      description: 'Uses heuristics & AI to estimate rugpull probability before you invest.',
-      icon: '🛡️'
-    },
-    {
-      id: 'paw',
-      x: '25%',
-      y: '75%',
-      title: 'Wallet Radar',
-      description: 'Traces large wallet movements, identifying whale activity on Solana tokens.',
-      icon: '🐾'
-    },
-    {
-      id: 'paw2',
-      x: '75%',
-      y: '75%',
-      title: 'Smart Contract Analyzer',
-      description: 'Automatically scans smart contracts for potential vulnerabilities and red flags.',
-      icon: '🔍'
-    }
-  ];
-
   return (
     <div className="relative cat-spotlight">
       {/* Realistic Aggressive Cat */}
@@ -126,27 +14,7 @@ const CatIllustration: React.FC = () => {
             minHeight: '500px',
             filter: 'drop-shadow(0 0 40px rgba(153, 69, 255, 0.3)) contrast(1.2) saturate(1.1)'
           }}
-        >
-          {/* Hotspots positioned around the cat */}
-          {hotspots.map((hotspot) => (
-            <Hotspot
-              key={hotspot.id}
-              {...hotspot}
-              onHover={setActiveHotspot}
-            />
-          ))}
-        </div>
-        
-        {/* Glow effects for active hotspots */}
-        {activeHotspot && (
-          <div 
-            className="absolute inset-0 pointer-events-none transition-opacity duration-400"
-            style={{
-              background: `radial-gradient(circle at ${hotspots.find(h => h.id === activeHotspot)?.x} ${hotspots.find(h => h.id === activeHotspot)?.y}, rgba(153, 69, 255, 0.3) 0%, transparent 30%)`,
-              borderRadius: '50%'
-            }}
-          />
-        )}
+        />
       </div>
     </div>
   );
