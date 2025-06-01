@@ -67,7 +67,7 @@ const CatIllustration: React.FC = () => {
     {
       id: 'brain',
       x: '50%',
-      y: '25%',
+      y: '20%',
       title: 'Neural Net Signal Engine',
       description: 'Analyzes on-chain data with deep learning models to detect early memecoin anomalies.',
       icon: '🧠'
@@ -75,7 +75,7 @@ const CatIllustration: React.FC = () => {
     {
       id: 'eyes',
       x: '50%',
-      y: '40%',
+      y: '35%',
       title: 'Volume + Hype Detection',
       description: 'Scans exchange volume and social chatter, prioritizing coins with sudden buzz.',
       icon: '👁'
@@ -83,14 +83,14 @@ const CatIllustration: React.FC = () => {
     {
       id: 'chest',
       x: '50%',
-      y: '60%',
+      y: '55%',
       title: 'Sentiment Scanner',
       description: 'Parses Telegram, Discord, and Twitter channels for sentiment indicators in real time.',
       icon: '❤️'
     },
     {
       id: 'paw',
-      x: '35%',
+      x: '30%',
       y: '75%',
       title: 'Wallet Radar',
       description: 'Traces large wallet movements, identifying whale activity on Solana tokens.',
@@ -99,7 +99,7 @@ const CatIllustration: React.FC = () => {
     {
       id: 'neck',
       x: '50%',
-      y: '50%',
+      y: '45%',
       title: 'Rug Risk Classifier',
       description: 'Uses heuristics & AI to estimate rugpull probability before you invest.',
       icon: '🛡️'
@@ -108,103 +108,17 @@ const CatIllustration: React.FC = () => {
 
   return (
     <div className="relative cat-spotlight">
-      {/* More Realistic Cat SVG */}
+      {/* Realistic Aggressive Cat */}
       <div className="relative w-full max-w-lg mx-auto">
-        <svg
-          viewBox="0 0 400 500"
-          className="w-full h-auto"
-          style={{ filter: 'drop-shadow(0 0 40px rgba(153, 69, 255, 0.2))' }}
-        >
-          {/* Cat Body - More rounded and realistic */}
-          <ellipse cx="200" cy="360" rx="110" ry="130" fill="url(#bodyGradient)" stroke="url(#strokeGradient)" strokeWidth="1"/>
-          
-          {/* Cat Head - More cat-like proportions */}
-          <ellipse cx="200" cy="190" rx="90" ry="105" fill="url(#headGradient)" stroke="url(#strokeGradient)" strokeWidth="1"/>
-          
-          {/* Cat Ears - More realistic triangular shape */}
-          <path d="M 140 120 L 120 70 L 175 105 Z" fill="url(#earGradient)" stroke="url(#strokeGradient)" strokeWidth="1"/>
-          <path d="M 260 120 L 280 70 L 225 105 Z" fill="url(#earGradient)" stroke="url(#strokeGradient)" strokeWidth="1"/>
-          
-          {/* Inner Ears - Pink realistic color */}
-          <path d="M 145 105 L 135 85 L 165 100 Z" fill="#FFB6C1"/>
-          <path d="M 255 105 L 265 85 L 235 100 Z" fill="#FFB6C1"/>
-          
-          {/* Realistic Cat Eyes - Almond shaped */}
-          <ellipse cx="175" cy="175" rx="18" ry="22" fill="url(#eyeGradient)" className="animate-eye-glow"/>
-          <ellipse cx="225" cy="175" rx="18" ry="22" fill="url(#eyeGradient)" className="animate-eye-glow"/>
-          
-          {/* Cat pupils - Vertical slits */}
-          <ellipse cx="175" cy="175" rx="3" ry="12" fill="#000"/>
-          <ellipse cx="225" cy="175" rx="3" ry="12" fill="#000"/>
-          
-          {/* Eye reflections */}
-          <ellipse cx="178" cy="170" rx="2" ry="4" fill="#FFD700" opacity="0.9"/>
-          <ellipse cx="228" cy="170" rx="2" ry="4" fill="#FFD700" opacity="0.9"/>
-          
-          {/* Cat Nose - Pink triangle */}
-          <path d="M 200 200 L 194 208 L 206 208 Z" fill="#FFB6C1"/>
-          
-          {/* Cat Mouth - More realistic */}
-          <path d="M 200 210 Q 185 218 175 215" stroke="#333" strokeWidth="2" fill="none"/>
-          <path d="M 200 210 Q 215 218 225 215" stroke="#333" strokeWidth="2" fill="none"/>
-          
-          {/* Whiskers - More natural positioning */}
-          <line x1="130" y1="185" x2="90" y2="180" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          <line x1="130" y1="195" x2="90" y2="195" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          <line x1="130" y1="205" x2="90" y2="210" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          
-          <line x1="270" y1="185" x2="310" y2="180" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          <line x1="270" y1="195" x2="310" y2="195" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          <line x1="270" y1="205" x2="310" y2="210" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-          
-          {/* Cat Paws */}
-          <ellipse cx="160" cy="470" rx="25" ry="15" fill="url(#pawGradient)"/>
-          <ellipse cx="240" cy="470" rx="25" ry="15" fill="url(#pawGradient)"/>
-          
-          {/* Fur Texture Lines */}
-          <path d="M 120 150 Q 200 140 280 150" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none"/>
-          <path d="M 130 300 Q 200 290 270 300" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none"/>
-          <path d="M 140 350 Q 200 340 260 350" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none"/>
-          
-          {/* Enhanced Gradients */}
-          <defs>
-            <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#1a1a1a"/>
-              <stop offset="30%" stopColor="#0a0a0a"/>
-              <stop offset="70%" stopColor="#2a2a2a"/>
-              <stop offset="100%" stopColor="#0a0a0a"/>
-            </linearGradient>
-            
-            <linearGradient id="headGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2a2a2a"/>
-              <stop offset="50%" stopColor="#0a0a0a"/>
-              <stop offset="100%" stopColor="#1a1a1a"/>
-            </linearGradient>
-            
-            <linearGradient id="earGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#1a1a1a"/>
-              <stop offset="100%" stopColor="#0a0a0a"/>
-            </linearGradient>
-            
-            <linearGradient id="pawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#333"/>
-              <stop offset="100%" stopColor="#1a1a1a"/>
-            </linearGradient>
-            
-            <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#9945FF"/>
-              <stop offset="50%" stopColor="#FFD700"/>
-              <stop offset="100%" stopColor="#9945FF"/>
-            </linearGradient>
-            
-            <radialGradient id="eyeGradient" cx="50%" cy="30%">
-              <stop offset="0%" stopColor="#00FF41"/>
-              <stop offset="50%" stopColor="#32CD32"/>
-              <stop offset="80%" stopColor="#228B22"/>
-              <stop offset="100%" stopColor="#006400"/>
-            </radialGradient>
-          </defs>
-        </svg>
+        <div 
+          className="w-full h-auto bg-cover bg-center bg-no-repeat rounded-lg"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bodyGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23000000'/%3E%3Cstop offset='30%25' stop-color='%23111111'/%3E%3Cstop offset='70%25' stop-color='%23222222'/%3E%3Cstop offset='100%25' stop-color='%23000000'/%3E%3C/linearGradient%3E%3ClinearGradient id='eyeGrad' cx='50%25' cy='30%25'%3E%3Cstop offset='0%25' stop-color='%23FF4500'/%3E%3Cstop offset='50%25' stop-color='%23FF6B00'/%3E%3Cstop offset='80%25' stop-color='%23FF8C00'/%3E%3Cstop offset='100%25' stop-color='%23FFA500'/%3E%3C/linearGradient%3E%3CradialGradient id='noseGrad'%3E%3Cstop offset='0%25' stop-color='%23FF69B4'/%3E%3Cstop offset='100%25' stop-color='%23FF1493'/%3E%3C/radialGradient%3E%3C/defs%3E%3C!-- Aggressive Cat Body --%3E%3Cellipse cx='200' cy='350' rx='120' ry='140' fill='url(%23bodyGrad)' stroke='%239945FF' stroke-width='2'/%3E%3C!-- Muscular Cat Head --%3E%3Cellipse cx='200' cy='180' rx='100' ry='110' fill='url(%23bodyGrad)' stroke='%239945FF' stroke-width='2'/%3E%3C!-- Sharp Aggressive Ears --%3E%3Cpath d='M 130 100 L 110 50 L 180 90 Z' fill='%23111111' stroke='%23FFD700' stroke-width='1'/%3E%3Cpath d='M 270 100 L 290 50 L 220 90 Z' fill='%23111111' stroke='%23FFD700' stroke-width='1'/%3E%3C!-- Inner Ears --%3E%3Cpath d='M 140 90 L 130 70 L 170 85 Z' fill='%23FF1493'/%3E%3Cpath d='M 260 90 L 270 70 L 230 85 Z' fill='%23FF1493'/%3E%3C!-- Fierce Glowing Eyes --%3E%3Cellipse cx='170' cy='160' rx='22' ry='28' fill='url(%23eyeGrad)' class='animate-pulse'/%3E%3Cellipse cx='230' cy='160' rx='22' ry='28' fill='url(%23eyeGrad)' class='animate-pulse'/%3E%3C!-- Aggressive Pupils --%3E%3Cellipse cx='170' cy='160' rx='4' ry='15' fill='%23000000'/%3E%3Cellipse cx='230' cy='160' rx='4' ry='15' fill='%23000000'/%3E%3C!-- Menacing Eye Reflections --%3E%3Cellipse cx='174' cy='155' rx='3' ry='6' fill='%23FFD700' opacity='0.9'/%3E%3Cellipse cx='234' cy='155' rx='3' ry='6' fill='%23FFD700' opacity='0.9'/%3E%3C!-- Aggressive Nose --%3E%3Cpath d='M 200 190 L 192 200 L 208 200 Z' fill='url(%23noseGrad)'/%3E%3C!-- Snarling Mouth --%3E%3Cpath d='M 200 205 Q 180 220 165 215' stroke='%23FF4500' stroke-width='3' fill='none'/%3E%3Cpath d='M 200 205 Q 220 220 235 215' stroke='%23FF4500' stroke-width='3' fill='none'/%3E%3C!-- Sharp Fangs --%3E%3Cpolygon points='185,210 180,225 190,225' fill='%23FFFFFF'/%3E%3Cpolygon points='215,210 210,225 220,225' fill='%23FFFFFF'/%3E%3C!-- Aggressive Whiskers --%3E%3Cline x1='120' y1='170' x2='80' y2='165' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3Cline x1='120' y1='180' x2='80' y2='180' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3Cline x1='120' y1='190' x2='80' y2='195' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3Cline x1='280' y1='170' x2='320' y2='165' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3Cline x1='280' y1='180' x2='320' y2='180' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3Cline x1='280' y1='190' x2='320' y2='195' stroke='rgba(255,255,255,0.6)' stroke-width='2'/%3E%3C!-- Powerful Paws with Claws --%3E%3Cellipse cx='150' cy='480' rx='30' ry='18' fill='%23222222'/%3E%3Cellipse cx='250' cy='480' rx='30' ry='18' fill='%23222222'/%3E%3C!-- Claws --%3E%3Cpath d='M 140 475 L 135 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cpath d='M 150 475 L 145 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cpath d='M 160 475 L 155 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cpath d='M 240 475 L 235 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cpath d='M 250 475 L 245 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cpath d='M 260 475 L 255 465' stroke='%23FFFFFF' stroke-width='2'/%3E%3C!-- Battle Scars --%3E%3Cpath d='M 130 140 L 150 145' stroke='%23FF0000' stroke-width='1' opacity='0.6'/%3E%3Cpath d='M 250 140 L 270 145' stroke='%23FF0000' stroke-width='1' opacity='0.6'/%3E%3Cpath d='M 180 300 L 220 305' stroke='%23FF0000' stroke-width='1' opacity='0.4'/%3E%3C/svg%3E")`,
+            aspectRatio: '4/5',
+            minHeight: '500px',
+            filter: 'drop-shadow(0 0 40px rgba(153, 69, 255, 0.3)) contrast(1.2) saturate(1.1)'
+          }}
+        />
 
         {/* Hotspots */}
         {hotspots.map((hotspot) => (
