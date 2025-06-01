@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Home, Gear, Radar, MessageCircle, Info, Mail } from 'lucide-react';
+import { Home, Settings, Radar, MessageCircle, Info, Mail } from 'lucide-react';
 
 interface NavItem {
   id: string;
@@ -14,7 +13,7 @@ const FuturisticNavigation: React.FC = () => {
 
   const navItems: NavItem[] = [
     { id: 'home', icon: <Home size={16} />, label: 'Home', href: '#hero' },
-    { id: 'how-it-works', icon: <Gear size={16} />, label: 'How It Works', href: '#how-it-works' },
+    { id: 'how-it-works', icon: <Settings size={16} />, label: 'How It Works', href: '#how-it-works' },
     { id: 'features', icon: <Radar size={16} />, label: 'Features', href: '#features' },
     { id: 'testimonials', icon: <MessageCircle size={16} />, label: 'Testimonials', href: '#testimonials' },
     { id: 'about', icon: <Info size={16} />, label: 'About', href: '#about' },
