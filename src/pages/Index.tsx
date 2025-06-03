@@ -1,6 +1,7 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import ParticleSystem from '../components/ParticleSystem';
-import PantherIllustration from '../components/PantherIllustration';
+import CatIllustration from '../components/CatIllustration';
 import DataPanel from '../components/DataPanel';
 import SunshineCursor from '../components/SunshineCursor';
 import { useToast } from '@/hooks/use-toast';
@@ -160,9 +161,9 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Right Column - Interactive Panther */}
+          {/* Right Column - Interactive Cat */}
           <div className={`flex justify-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}>
-            <PantherIllustration />
+            <CatIllustration />
           </div>
         </div>
       </section>
