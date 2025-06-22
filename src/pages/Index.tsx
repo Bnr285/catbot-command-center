@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import ParticleSystem from '../components/ParticleSystem';
 import CatIllustration from '../components/CatIllustration';
@@ -37,6 +36,10 @@ const Index = () => {
       // Reset form
       e.currentTarget.reset();
     }
+  };
+
+  const handleFollowTwitter = () => {
+    window.open('https://twitter.com/catbot_ai', '_blank', 'noopener,noreferrer');
   };
 
   const testimonials = [
@@ -140,24 +143,40 @@ const Index = () => {
             </div>
 
             <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <button onClick={scrollToContact} className="neon-button group relative overflow-hidden">
-                <span className="relative z-10">LAUNCH BOT</span>
-                {/* Sparkle effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-catbot-gold rounded-full animate-ping"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        animationDelay: `${i * 0.1}s`,
-                        animationDuration: '1s'
-                      }}
-                    />
-                  ))}
-                </div>
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button onClick={scrollToContact} className="neon-button group relative overflow-hidden">
+                  <span className="relative z-10">LAUNCH BOT</span>
+                  {/* Sparkle effect on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {[...Array(6)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-1 h-1 bg-catbot-gold rounded-full animate-ping"
+                        style={{
+                          left: `${Math.random() * 100}%`,
+                          top: `${Math.random() * 100}%`,
+                          animationDelay: `${i * 0.1}s`,
+                          animationDuration: '1s'
+                        }}
+                      />
+                    ))}
+                  </div>
+                </button>
+
+                <button 
+                  onClick={handleFollowTwitter}
+                  className="neon-button-secondary group relative overflow-hidden flex items-center gap-2"
+                >
+                  <span className="relative z-10">Follow on X</span>
+                  <svg 
+                    className="w-4 h-4 relative z-10" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
 

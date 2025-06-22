@@ -159,6 +159,32 @@
     transform: scale(0.98);
   }
 
+  /* Secondary neon button for Follow on X */
+  .neon-button-secondary {
+    background: transparent;
+    border: 2px solid #9945FF;
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    color: #FFFFFF;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 15px rgba(153, 69, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .neon-button-secondary:hover {
+    box-shadow: 0 0 20px rgba(153, 69, 255, 0.8);
+    background: rgba(153, 69, 255, 0.05);
+    transform: scale(1.02);
+  }
+
+  .neon-button-secondary:active {
+    transform: scale(0.98);
+  }
+
   /* Particle system */
   .particle {
     position: absolute;
